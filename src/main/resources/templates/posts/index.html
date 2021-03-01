@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="partials/head :: header-links"></head>
+<body>
+        <nav th:replace="partials/navbar :: navbar"></nav>
+
+        <h1>Here are all the posts!</h1>
+
+        <div class="container">
+            <div th:each="post : ${posts}">
+                <a th:text="${post.title}" th:href="@{|/posts/${post.id}|}"></a>
+                <p th:text="${post.body}"></p>
+            </div>
+        </div>
+
+
+        <div th:replace="partials/scripts :: assets"></div>
+</body>
+</html>
