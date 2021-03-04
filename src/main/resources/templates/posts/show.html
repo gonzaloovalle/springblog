@@ -1,17 +1,18 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/head :: header-links"></head>
 <body>
-        <nav th:replace="partials/navbar :: navbar"></nav>
+<nav th:replace="partials/navbar :: navbar"></nav>
 
-        <div class="container">
-                <h1>Here is a single post!</h1>
+<div class="container">
+        <h1 class="my-4">Here is a single post !</h1>
 
-                <h3 th:text="${post.title}"></h3>
-                <p th:text="'Authored by ' + ${post.user.email}"></p>
-                <p th:text="${post.body}"></p>
-                <div th:replace="partials/scripts :: assets"></div>
-                <a th:href="@{|/posts/${post.id}/edit|}">Edit Post</a>
-        </div>
+        <h3 th:text="${post.title}"></h3>
+        <p th:text="'Authored by ' + ${post.user.email}"></p>
+        <p th:text="${post.body}"></p>
+        <div th:replace="partials/scripts :: assets"></div>
+        <a th:href="@{|/posts/${post.id}/edit|}">Edit Post</a>
+
+</div>
 </body>
 </html>
